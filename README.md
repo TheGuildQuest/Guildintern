@@ -129,7 +129,10 @@ pnpm install --include=optional sharp
 
 #### Notes
 
-1. For twitter, you need to include
+1. .env file needs to be updated with:
+   - Openai API
+   - Twitter information
+For twitter, you need to include
    
 TWITTER_COOKIES='[
   {"key":"auth_token","value":"your_auth_token","domain":".twitter.com"},
@@ -137,8 +140,10 @@ TWITTER_COOKIES='[
   {"key":"ct0","value":"your_ct0_again","domain":".x.com"}
 ]'
 
-2. This is what character file Eliza will use to run the bot:
+2. In .env under Twitter configurations is where all of the posting intervals, search intervals, and small adjustments can be made
+
+3. This is what character file Eliza will use to run the bot:
 packages\core\src\defaultCharacter.ts
 
-3. Currently we have created 2 characters to test out. The first is defaultCharacter.ts, and the second is defaultCharacter2.ts . To try the second one, just rename the file to defaultCharacter.ts and run it normally.
+4. Currently we have created 2 characters to test out. The first is defaultCharacter.ts, and the second is defaultCharacter2.ts . To try the second one, just rename the file to defaultCharacter.ts and run it normally.
 
