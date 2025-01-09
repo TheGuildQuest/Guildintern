@@ -64,25 +64,7 @@ All contributions are publicly tracked on-chain and used exclusively for ecosyst
 
 > **Note for Windows Users:** [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual) is required.
 
-### Use the Starter (Recommended)
-
-```bash
-git clone https://github.com/elizaos/eliza-starter.git
-cd eliza-starter
-cp .env.example .env
-pnpm i && pnpm build && pnpm start
-```
-
-Once the agent is running, you should see the message to run "pnpm start:client" at the end.
-Open another terminal and move to same directory and then run below command and follow the URL to chat to your agent.
-
-```bash
-pnpm start:client
-```
-
-Then read the [Documentation](https://elizaos.github.io/eliza/) to learn how to customize your Eliza.
-
-### Manually Start Eliza (Only recommended if you know what you are doing)
+### Start Eliza 
 
 ```bash
 # Clone the repository
@@ -93,7 +75,7 @@ git clone https://github.com/elizaos/eliza.git
 git checkout $(git describe --tags --abbrev=0)
 ```
 
-### Start Eliza with Gitpod
+### Start Eliza with Gitpod (no need)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/elizaos/eliza/tree/main)
 
@@ -145,18 +127,18 @@ You may need to install Sharp. If you see an error when starting up, try install
 pnpm install --include=optional sharp
 ```
 
-### Community & contact
+#### Notes
 
-- [GitHub Issues](https://github.com/elizaos/eliza/issues). Best for: bugs you encounter using Eliza, and feature proposals.
-- [Discord](https://discord.gg/ai16z). Best for: sharing your applications and hanging out with the community.
-- [Developer Discord](https://discord.gg/3f67SH4rXT). Best for: getting help and plugin development.
+1. For twitter, you need to include
+   
+TWITTER_COOKIES='[
+  {"key":"auth_token","value":"your_auth_token","domain":".twitter.com"},
+  {"key":"ct0","value":"your_ct0","domain":".twitter.com"},
+  {"key":"ct0","value":"your_ct0_again","domain":".x.com"}
+]'
 
-## Contributors
+2. This is what character file Eliza will use to run the bot:
+packages\core\src\defaultCharacter.ts
 
-<a href="https://github.com/elizaos/eliza/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=elizaos/eliza" />
-</a>
+3. Currently we have created 2 characters to test out. The first is defaultCharacter.ts, and the second is defaultCharacter2.ts . To try the second one, just rename the file to defaultCharacter.ts and run it normally.
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=elizaos/eliza&type=Date)](https://star-history.com/#elizaos/eliza&Date)
